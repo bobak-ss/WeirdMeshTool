@@ -6,16 +6,7 @@ namespace WeirdMeshTool
     {
         public float radius;
         public int smoothness;
-        void Start()
-        {
-            
-        }
-
-        void Update()
-        {
-            
-        }
-
+        
         public void CreateCircle()
         {
             GameObject go = new GameObject();
