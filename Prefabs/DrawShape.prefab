@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2388702899437688418
+--- !u!1 &3862086464451299512
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2388702899437688429}
-  - component: {fileID: 2388702899437688419}
-  - component: {fileID: 2388702899437688428}
+  - component: {fileID: 244607523380283384}
+  - component: {fileID: 7929518228568762528}
+  - component: {fileID: 3365554347318254705}
   m_Layer: 0
-  m_Name: Shape
+  m_Name: DrawShape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2388702899437688429
+--- !u!4 &244607523380283384
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2388702899437688418}
+  m_GameObject: {fileID: 3862086464451299512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,13 +32,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!120 &2388702899437688419
+--- !u!114 &7929518228568762528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3862086464451299512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e10ec63a1886ea941b8b37cc87ab7352, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmentsNum: 5
+  segmentT: 2
+  radius: 1
+  lineRenderer: {fileID: 3365554347318254705}
+--- !u!120 &3365554347318254705
 LineRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2388702899437688418}
+  m_GameObject: {fileID: 3862086464451299512}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -71,16 +87,16 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 4, y: 0, z: 0}
-  - {x: 1.809017, y: 1.3143278, z: 0}
-  - {x: 1.2360679, y: 3.8042262, z: 0}
-  - {x: -0.6909832, y: 2.126627, z: 0}
-  - {x: -3.2360682, y: 2.3511407, z: 0}
-  - {x: -2.236068, y: -0.00000027020508, z: 0}
-  - {x: -3.2360678, y: -2.3511415, z: 0}
-  - {x: -0.6909826, y: -2.1266272, z: 0}
-  - {x: 1.2360685, y: -3.804226, z: 0}
-  - {x: 1.8090172, y: -1.314328, z: 0}
+  - {x: 1, y: 0, z: 0}
+  - {x: 2.2725425, y: 1.6510987, z: 0}
+  - {x: 0.30901697, y: 0.95105654, z: 0}
+  - {x: -0.8680341, y: 2.6715338, z: 0}
+  - {x: -0.80901706, y: 0.5877852, z: 0}
+  - {x: -2.809017, y: -0.00000026425252, z: 0}
+  - {x: -0.80901694, y: -0.58778536, z: 0}
+  - {x: -0.8680341, y: -2.6715338, z: 0}
+  - {x: 0.30901712, y: -0.9510565, z: 0}
+  - {x: 2.272543, y: -1.6510981, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -145,19 +161,3 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 1
---- !u!114 &2388702899437688428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2388702899437688418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63e83456a9cbaf6478e7630a8a988934, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  segmentsNum: 5
-  segmentT: -1
-  radius: 2
-  lineRenderer: {fileID: 0}
