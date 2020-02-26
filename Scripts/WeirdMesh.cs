@@ -10,7 +10,7 @@ namespace WeirdMeshTool
         public float radius;
         public float z;
 
-        internal void ChangeTheMesh()
+        public void ChangeTheMesh()
         {
             Vector3[] surfacePoints = DrawShapeStatic.SetUpPoints(segmentsNum, segmentT, radius);
             MeshFilter mf = gameObject.GetComponent<MeshFilter>();
