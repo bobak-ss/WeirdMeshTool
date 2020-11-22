@@ -12,7 +12,8 @@ namespace WeirdMeshTool
 
         public void ChangeTheMesh()
         {
-            Vector3[] surfacePoints = DrawShape.SetUpPoints(segmentsNum, segmentT, radius);
+            var shape = new Shape(segmentsNum, segmentT, radius);
+            Vector3[] surfacePoints = DrawShape.SetUpPoints(shape);
             MeshFilter mf = gameObject.GetComponent<MeshFilter>();
             mf.mesh = MeshCreatorStatic.Create3dMesh(surfacePoints, z);
             MeshRenderer mr = gameObject.GetComponent<MeshRenderer>();

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,22 +7,19 @@ namespace WeirdMeshTool
 {
     public class ShapeMono : MonoBehaviour
     {
-        public int segmentsNum;
-        public float segmentT;
-        public float radius;
-        public LineRenderer lineRenderer = null;
+        [SerializeField]
+        public Shape shape = new Shape();
+        public LineRenderer lineRenderer;
 
-        public void Initialize(int _segmentsNum, float _segmentT, float _radius, LineRenderer _lineRenderer)
+        public void Initialize(Shape _shape, LineRenderer _lineRenderer)
         {
-            segmentsNum = _segmentsNum;
-            segmentT = _segmentT;
-            radius = _radius;
+            shape = _shape;
             lineRenderer = _lineRenderer;
         }
 
         public void ChangeTheShape()
         {
-            Vector3[] newPoints = DrawShape.SetUpPoints(segmentsNum, segmentT, radius);
+            Vector3[] newPoints = DrawShape.SetUpPoints(shape);
             
             if (lineRenderer == null)
             {

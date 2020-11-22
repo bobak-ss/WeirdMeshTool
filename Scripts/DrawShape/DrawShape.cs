@@ -12,19 +12,19 @@ namespace WeirdMeshTool
         private static Vector3[] segmentsPoints;
         private static Vector3[] segmentsCenterPoints;
 
-        public static Vector3[] SetUpPoints(int _segmentsCount, float _SegmentsT, float _mainCircleRadius)
+        public static Vector3[] SetUpPoints(Shape shape)
         {
             // setting up segment points
-            segmentsPoints = new Vector3[_segmentsCount];
+            segmentsPoints = new Vector3[shape.SegmentsCount];
             for (int i = 0; i < segmentsPoints.Length; i++)
             {
-                segmentsPoints[i] = new Vector3(MathUtility.rCos(_mainCircleRadius, i * (360f / _segmentsCount)),
-                                                MathUtility.rSin(_mainCircleRadius, i * (360f / _segmentsCount)),
+                segmentsPoints[i] = new Vector3(MathUtility.rCos(shape.Radius, i * (360f / shape.SegmentsCount)),
+                                                MathUtility.rSin(shape.Radius, i * (360f / shape.SegmentsCount)),
                                                 0);
             }
 
             // setting up segment's default center points
-            segmentsCenterPoints = new Vector3[_segmentsCount];
+            segmentsCenterPoints = new Vector3[shape.SegmentsCount];
             for (int i = 0; i < segmentsCenterPoints.Length; i++)
             {
                 if (i == segmentsCenterPoints.Length - 1)
@@ -41,9 +41,9 @@ namespace WeirdMeshTool
             float alpha = 0f;
             for (int i = 0; i < segmentsCenterPoints.Length; i++)
             {
-                alpha = (180 / _segmentsCount) + (i * (360 / _segmentsCount));
-                segmentsCenterPoints[i] = segmentsCenterPoints[i] + new Vector3(MathUtility.rCos(_SegmentsT, alpha), 
-                                                                                MathUtility.rSin(_SegmentsT, alpha), 
+                alpha = (180 / shape.SegmentsCount) + (i * (360 / shape.SegmentsCount));
+                segmentsCenterPoints[i] = segmentsCenterPoints[i] + new Vector3(MathUtility.rCos(shape.SegmentsT, alpha), 
+                                                                                MathUtility.rSin(shape.SegmentsT, alpha), 
                                                                                 0);
             }
 

@@ -12,17 +12,19 @@ namespace WeirdMeshTool
         public void Draw()
         {
             var newGameObject = new GameObject();
-            var shape = newGameObject.AddComponent<ShapeMono>();
+            var shapeMono = newGameObject.AddComponent<ShapeMono>();
             lineRenderer = newGameObject.AddComponent<LineRenderer>();
             
-            shape.Initialize(segmentsNum, segmentT, radius, lineRenderer);
+            var shape = new Shape(segmentsNum, segmentT, radius);
+            shapeMono.Initialize(shape, lineRenderer);
             
             ModifyLine();
         }
 
         private void ModifyLine()
         {
-            var points = DrawShape.SetUpPoints(segmentsNum, segmentT, radius);
+            var shape = new Shape(segmentsNum, segmentT, radius);
+            var points = DrawShape.SetUpPoints(shape);
             lineRenderer.positionCount = points.Length;
             lineRenderer.SetPositions(points);
             lineRenderer.useWorldSpace = false;

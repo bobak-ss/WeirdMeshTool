@@ -4,7 +4,7 @@ using UnityEngine;
 namespace WeirdMeshTool
 {
     [CustomEditor(typeof(ShapeMono))]
-    public class TheShapeEditor : Editor
+    public class ShapeEditor : Editor
     {
         public override void OnInspectorGUI()
         {
@@ -12,9 +12,9 @@ namespace WeirdMeshTool
 
             using (var check = new EditorGUI.ChangeCheckScope())
             {
-                shapeMono.segmentsNum = EditorGUILayout.IntSlider("Segments Num", shapeMono.segmentsNum, 1, 10);
-                shapeMono.segmentT = EditorGUILayout.Slider("Segments T", shapeMono.segmentT, -10, 10);
-                shapeMono.radius = EditorGUILayout.Slider("Radius", shapeMono.radius, 1, 10);
+                shapeMono.shape.SegmentsCount = EditorGUILayout.IntSlider("Segments Num", shapeMono.shape.SegmentsCount, 1, 10);
+                shapeMono.shape.SegmentsT = EditorGUILayout.Slider("Segments T", shapeMono.shape.SegmentsT, -10, 10);
+                shapeMono.shape.Radius = EditorGUILayout.Slider("Radius", shapeMono.shape.Radius, 1, 10);
 
                 if (check.changed)
                     shapeMono.ChangeTheShape();
