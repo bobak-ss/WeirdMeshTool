@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace WeirdMeshTool
 {
-    public class TheShape : MonoBehaviour
+    public class ShapeMono : MonoBehaviour
     {
         public int segmentsNum;
         public float segmentT;
@@ -21,7 +21,7 @@ namespace WeirdMeshTool
 
         public void ChangeTheShape()
         {
-            Vector3[] newPoints = DrawShapeStatic.SetUpPoints(segmentsNum, segmentT, radius);
+            Vector3[] newPoints = DrawShape.SetUpPoints(segmentsNum, segmentT, radius);
             
             if (lineRenderer == null)
             {
