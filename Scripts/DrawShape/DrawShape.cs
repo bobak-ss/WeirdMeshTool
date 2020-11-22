@@ -18,8 +18,8 @@ namespace WeirdMeshTool
             segmentsPoints = new Vector3[_segmentsCount];
             for (int i = 0; i < segmentsPoints.Length; i++)
             {
-                segmentsPoints[i] = new Vector3(rCos(_mainCircleRadius, i * (360f / _segmentsCount)),
-                                                rSin(_mainCircleRadius, i * (360f / _segmentsCount)),
+                segmentsPoints[i] = new Vector3(MathUtility.rCos(_mainCircleRadius, i * (360f / _segmentsCount)),
+                                                MathUtility.rSin(_mainCircleRadius, i * (360f / _segmentsCount)),
                                                 0);
             }
 
@@ -42,8 +42,8 @@ namespace WeirdMeshTool
             for (int i = 0; i < segmentsCenterPoints.Length; i++)
             {
                 alpha = (180 / _segmentsCount) + (i * (360 / _segmentsCount));
-                segmentsCenterPoints[i] = segmentsCenterPoints[i] + new Vector3(rCos(_SegmentsT, alpha), 
-                                                                                rSin(_SegmentsT, alpha), 
+                segmentsCenterPoints[i] = segmentsCenterPoints[i] + new Vector3(MathUtility.rCos(_SegmentsT, alpha), 
+                                                                                MathUtility.rSin(_SegmentsT, alpha), 
                                                                                 0);
             }
 
@@ -57,19 +57,6 @@ namespace WeirdMeshTool
             }
             
             return mainPoints;
-        }
-        
-        public static float rCos(float r, float angle)
-        {
-            return r * Mathf.Cos(angelToRadian(angle));
-        }
-        public static float rSin(float r, float angle)
-        {
-            return r * Mathf.Sin(angelToRadian(angle));
-        }
-        public static float angelToRadian(float angel)
-        {
-            return ((float)Math.PI * angel) / 180;
         }
     }
 }

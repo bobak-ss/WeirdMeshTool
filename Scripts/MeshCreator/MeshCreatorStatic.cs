@@ -177,8 +177,8 @@ namespace WeirdMeshTool
 
             for (int i = 0; i < triangleCount + 1; i++)
             {
-                pointsv3[i] = new Vector3(center.x + rCos(radius, i * triangleDegree), 
-                                        center.y + rSin(radius, i * triangleDegree),
+                pointsv3[i] = new Vector3(center.x + MathUtility.rCos(radius, i * triangleDegree), 
+                                        center.y + MathUtility.rSin(radius, i * triangleDegree),
                                         center.z);
             }
 
@@ -191,22 +191,14 @@ namespace WeirdMeshTool
 
             for (int i = 0; i < degree + 1; i++)
             {
-                pointsv3[i] = new Vector3(center.x + rCos(radius, i * segmentDegree), 
-                                        center.y + rSin(radius, i * segmentDegree),
+                pointsv3[i] = new Vector3(center.x + MathUtility.rCos(radius, i * segmentDegree), 
+                                        center.y + MathUtility.rSin(radius, i * segmentDegree),
                                         z);
             }
 
             return pointsv3;
         }
-
-        private static float rCos(float r, float angle)
-        {
-            return r * Mathf.Cos(angle * Mathf.Deg2Rad);
-        }
-        private static float rSin(float r, float angle)
-        {
-            return r * Mathf.Sin(angle * Mathf.Deg2Rad);
-        }
+        
         private static void CreateSphere(Vector3 position, string name)
         {
             GameObject go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
